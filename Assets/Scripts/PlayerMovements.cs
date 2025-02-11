@@ -10,11 +10,24 @@ public class PlayerMovements : MonoBehaviour
     [SerializeField] private float accel;
     [SerializeField] private float deccel;
 
+    [SerializeField] private float maxRotate;
+    [SerializeField] private GameObject playerObj;
+    [SerializeField] private float rotateSmoothness;
+
     private Rigidbody _rb;
+    private float goalRotation;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {
+        goalRotation = Mathf.Sign(moveDir.y) * Mathf.LerpAngle(0, maxRotate, Mathf.Abs(moveDir.y));
+
+        float Xrotation = Mathf.LerpAngle(playerObj.transform.rotation.eulerAngles.x, goalRotation, Time.deltaTime * rotateSmoothness);
+        playerObj.transform.rotation = Quaternion.Euler(Xrotation, 0, 0);
     }
 
     private void FixedUpdate()
@@ -31,6 +44,5 @@ public class PlayerMovements : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         moveDir = context.ReadValue<Vector2>();
-        Debug.Log("yo");
     }
 }
