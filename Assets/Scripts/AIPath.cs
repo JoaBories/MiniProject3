@@ -22,11 +22,4 @@ public class AIPath : MonoBehaviour
             time -= 1;
         }
     }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-
-        
-    }
 }
