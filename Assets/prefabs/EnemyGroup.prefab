@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8196191908552476980}
   m_Layer: 0
   m_Name: EnemyGroup
-  m_TagString: Untagged
+  m_TagString: EnemyGroup
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,51 +71,29 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 2.4891512
-      outSlope: 2.4891512
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.087319136
-      value: 0.21735054
-      inSlope: -0.51109576
-      outSlope: -0.51109576
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.18281037
-    - serializedVersion: 3
-      time: 0.53975886
-      value: 0.4478676
-      inSlope: -3.9938452
-      outSlope: -3.9938452
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.05103931
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.6689614
-      value: 0.6006641
-      inSlope: -1.7677144
-      outSlope: -1.7677144
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.16936596
-      outWeight: 0.33333334
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1.2063123
-      outSlope: 1.2063123
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  gizmosPrecision: 35.9
-  gizmosScale: {x: 18.25, y: 6.16}
+  number: 0
+  prefab: {fileID: 0}
+  interval: 0
+  speed: 0
+  gizmosPrecision: 10
+  gizmosScale: {x: 75, y: 25}
+  origin: {fileID: 4597802465695043021}

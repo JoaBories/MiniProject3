@@ -82,6 +82,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  speed: 1
+  pathScale: {x: 75, y: 25}
 --- !u!1001 &6602984635605403592
 PrefabInstance:
   m_ObjectHideFlags: 0

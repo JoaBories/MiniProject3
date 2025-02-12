@@ -51,7 +51,7 @@ public class PlayerShoot : MonoBehaviour
 
     public void Shoot(GameObject prefab, float bulletSpeed)
     {
-        GameObject currentbullet = Instantiate(bulletPrefab, bulletSpawn.position + new Vector3(bulletDemiSize, 0, 0), Quaternion.identity);
+        GameObject currentbullet = Instantiate(prefab, bulletSpawn.position + new Vector3(bulletDemiSize, 0, 0), Quaternion.identity);
         currentbullet.GetComponent<Rigidbody>().AddForce(transform.right.normalized * bulletSpeed, ForceMode.Impulse);
         lastShoot = 0;
     }

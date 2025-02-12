@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.VFX;
 
 public class PlayerMovements : MonoBehaviour
 {
@@ -14,8 +13,20 @@ public class PlayerMovements : MonoBehaviour
     [SerializeField] private GameObject playerObj;
     [SerializeField] private float rotateSmoothness;
 
+    [SerializeField] private float minThrusterSize;
+    [SerializeField] private float maxThrusterSize;
+    [SerializeField] private float thrusterSizeChangeSmoothness;
+    
+    [SerializeField] private float minThrusterI;
+    [SerializeField] private float maxThrusterI;
+    [SerializeField] private float thrusterIChangeSmoothness;
+
+    [SerializeField] private VisualEffect thrusterVFX;
+
     private Rigidbody _rb;
     private float goalRotation;
+    private float goalSize;
+    private float goalI;
 
     private void Awake()
     {
@@ -28,6 +39,14 @@ public class PlayerMovements : MonoBehaviour
 
         float Xrotation = Mathf.LerpAngle(playerObj.transform.rotation.eulerAngles.x, goalRotation, Time.deltaTime * rotateSmoothness);
         playerObj.transform.rotation = Quaternion.Euler(Xrotation, 0, 0);
+
+        goalSize = Mathf.Lerp(minThrusterSize, maxThrusterSize, (moveDir.x + 1)/2);
+        float size = Mathf.Lerp(thrusterVFX.GetFloat("size"), goalSize, thrusterSizeChangeSmoothness * Time.deltaTime);
+        thrusterVFX.SetFloat("size", size);
+
+        goalI = Mathf.Lerp(minThrusterI, maxThrusterI, (moveDir.x + 1) / 2);
+        float intensity = Mathf.Lerp(thrusterVFX.GetFloat("intensity"), goalI, thrusterIChangeSmoothness * Time.deltaTime);
+        thrusterVFX.SetFloat("intensity", intensity);
     }
 
     private void FixedUpdate()

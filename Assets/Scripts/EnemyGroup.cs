@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class EnemyGroup : MonoBehaviour
 {
-    [SerializeField] public AnimationCurve path;
-    [SerializeField] private float gizmosPrecision = 10;
-    [SerializeField] private Vector2 gizmosScale = new Vector2(10, 5);
+    public AnimationCurve path;
+    public int number;
+    public GameObject prefab;
+    public float interval;
+    public float speed;
 
+    [Header("Gizmos")]
+    [SerializeField] private float gizmosPrecision = 10;
+    [SerializeField] private Vector2 gizmosScale = new(10, 5);
     [SerializeField] private Transform origin;
 
     private void OnDrawGizmos()
@@ -19,7 +24,7 @@ public class EnemyGroup : MonoBehaviour
 
         for (int i = (int) gizmosPrecision; i >= 0; i--)
         {
-            Vector2 point = new Vector2(origin.position.x + (i / gizmosPrecision * gizmosScale.x) - gizmosScale.x, origin.position.y + (path.Evaluate(i / gizmosPrecision) * gizmosScale.y));
+            Vector2 point = new(origin.position.x + (i / gizmosPrecision * gizmosScale.x) - gizmosScale.x, origin.position.y + (path.Evaluate(i / gizmosPrecision) * gizmosScale.y));
             Gizmos.DrawLine(lastpoint, point);
             lastpoint = point;
         }

@@ -30,7 +30,5 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        Debug.Log(Mathf.Sqrt(maxSpeed * maxSpeed * 10000));
     }
 }

@@ -10,4 +10,29 @@ public class EnemySpawner : MonoBehaviour
     {
         Instance = this;
     }
+
+    private IEnumerator Spawn(int number, float interval, float speed, GameObject enemy, AnimationCurve path)
+    {
+        for (int i = 0; i < number; i++)
+        {
+            GameObject currentEnemy = Instantiate(enemy, transform);
+            currentEnemy.GetComponent<AIPath>().Initialize(path, speed);
+            yield return new WaitForSeconds(interval);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("EnemyGroup"))
+        {
+            EnemyGroup enemyGroup = other.GetComponent<EnemyGroup>();
+            int gNumber = enemyGroup.number;
+            float gInterval = enemyGroup.interval;
+            float gSpeed = enemyGroup.speed;
+            GameObject gEnemy = enemyGroup.prefab;
+            AnimationCurve gPath = enemyGroup.path;
+
+            StartCoroutine(Spawn(gNumber, gInterval, gSpeed, gEnemy, gPath));
+        }
+    }
 }
