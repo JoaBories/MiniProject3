@@ -5,21 +5,24 @@ using UnityEngine;
 public class AIPath : MonoBehaviour
 {
     [SerializeField] private AnimationCurve path;
-    float time;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float speed;
+    float time = 1;
+    [SerializeField] private Vector2 pathScale = new Vector2(10, 5);
 
-    // Update is called once per frame
+
+
     void Update()
     {
-        time += Time.deltaTime * 0.2f;
-        transform.localPosition = new Vector3(0, path.Evaluate(time) * 10, 0);
-        if (time > 1)
+        time -= Time.deltaTime * speed;
+
+        Vector2 nextPos = new Vector2(time * pathScale.x, path.Evaluate(time) * pathScale.y);
+
+        transform.localPosition = nextPos;
+
+
+        if (time <= 0)
         {
-            time -= 1;
+            Destroy(gameObject);
         }
     }
 }
