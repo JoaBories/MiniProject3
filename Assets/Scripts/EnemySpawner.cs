@@ -6,17 +6,19 @@ public class EnemySpawner : MonoBehaviour
 {
     public static EnemySpawner Instance;
 
+    [SerializeField] private GameObject enemyGroupPrefab;
+
     private void Awake()
     {
         Instance = this;
     }
 
-    private IEnumerator Spawn(int number, float interval, float speed, GameObject enemy, AnimationCurve path)
+    private IEnumerator Spawn(int number, float interval, float speed, GameObject enemy, AnimationCurve path, EnemyGroup currentEnemyGroup)
     {
         for (int i = 0; i < number; i++)
         {
-            GameObject currentEnemy = Instantiate(enemy, transform);
-            currentEnemy.GetComponent<AIPath>().Initialize(path, speed);
+            GameObject currentEnemy = Instantiate(enemy, currentEnemyGroup.transform);
+            currentEnemy.GetComponent<AIPath>().Initialize(path, speed, currentEnemyGroup);
             yield return new WaitForSeconds(interval);
         }
     }
@@ -25,14 +27,16 @@ public class EnemySpawner : MonoBehaviour
     {
         if (other.CompareTag("EnemyGroup"))
         {
-            EnemyGroup enemyGroup = other.GetComponent<EnemyGroup>();
-            int gNumber = enemyGroup.number;
-            float gInterval = enemyGroup.interval;
-            float gSpeed = enemyGroup.speed;
-            GameObject gEnemy = enemyGroup.prefab;
-            AnimationCurve gPath = enemyGroup.path;
+            EnemyGroupToSpawn enemyGroupToSpawn = other.GetComponent<EnemyGroupToSpawn>();
+            int gNumber = enemyGroupToSpawn.number;
+            float gInterval = enemyGroupToSpawn.interval;
+            float gSpeed = enemyGroupToSpawn.speed;
+            GameObject gEnemy = enemyGroupToSpawn.prefab;
+            AnimationCurve gPath = enemyGroupToSpawn.path;
 
-            StartCoroutine(Spawn(gNumber, gInterval, gSpeed, gEnemy, gPath));
+            EnemyGroup gCurrentEnemyGroup = Instantiate(enemyGroupPrefab, transform).GetComponent<EnemyGroup>();
+            gCurrentEnemyGroup.reward = enemyGroupToSpawn.reward;
+            StartCoroutine(Spawn(gNumber, gInterval, gSpeed, gEnemy, gPath, gCurrentEnemyGroup));
         }
     }
 }

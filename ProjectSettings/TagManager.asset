@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bullet
   - EnemyGroup
+  - Enemy
+  - GameCage
   layers:
   - Default
   - TransparentFX

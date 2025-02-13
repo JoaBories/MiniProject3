@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class AIPath : MonoBehaviour
 {
-    [SerializeField] private AnimationCurve path;
+    private AnimationCurve path;
+    private float speed;
+    private EnemyGroup enemyGroup;
     
-    [SerializeField] private float speed;
-    [SerializeField] private Vector2 pathScale = new(10, 5);
+    [SerializeField] private Vector2 pathScale = new Vector2(75, 25);
+
 
     float time = 1;
 
@@ -23,9 +25,15 @@ public class AIPath : MonoBehaviour
         }
     }
 
-    public void Initialize(AnimationCurve iPath, float iSpeed)
+    public void Initialize(AnimationCurve iPath, float iSpeed, EnemyGroup iEnemyGroup)
     {
         path = iPath;
         speed = iSpeed;
+        enemyGroup = iEnemyGroup;
+    }
+
+    private void OnDestroy()
+    {
+        enemyGroup.CheckForChildrens(transform.position);
     }
 }
