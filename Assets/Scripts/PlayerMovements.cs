@@ -4,7 +4,6 @@ using UnityEngine.VFX;
 
 public class PlayerMovements : MonoBehaviour
 {
-    Vector2 moveDir;
     [SerializeField] private float movementSpeed;
     [SerializeField] private float accel;
     [SerializeField] private float deccel;
@@ -23,6 +22,7 @@ public class PlayerMovements : MonoBehaviour
 
     [SerializeField] private VisualEffect thrusterVFX;
 
+    private Vector2 moveDir;
     private Rigidbody _rb;
     private float goalRotation;
     private float goalSize;

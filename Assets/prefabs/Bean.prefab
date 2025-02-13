@@ -68,23 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58da79ac9f497cf4aa4e938da64fe81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0.58247733
-      value: 0.15474856
-      inSlope: 0.8021358
-      outSlope: 0.8021358
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  speed: 1
-  pathScale: {x: 75, y: 25}
+  explosionPrefab: {fileID: 7225718976508027857, guid: 49fd7b6d91ac00a4693b39aa9db96f9d,
+    type: 3}
 --- !u!95 &3096410573193192301
 Animator:
   serializedVersion: 5

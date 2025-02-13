@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: dd1d1378fd1213a4285f4ba930cbb839, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 4ac0d67db5a6dca42a9935918981f160, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -122,6 +122,74 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &6463076
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3805956652626688443, guid: 035ded028a77bb741be3df8f52beb88b,
+        type: 3}
+      propertyPath: m_Name
+      value: PowerCapsule
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442116989792588596, guid: 035ded028a77bb741be3df8f52beb88b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.22697973
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442116989792588596, guid: 035ded028a77bb741be3df8f52beb88b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442116989792588596, guid: 035ded028a77bb741be3df8f52beb88b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.94964767
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442116989792588596, guid: 035ded028a77bb741be3df8f52beb88b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442116989792588596, guid: 035ded028a77bb741be3df8f52beb88b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442116989792588596, guid: 035ded028a77bb741be3df8f52beb88b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442116989792588596, guid: 035ded028a77bb741be3df8f52beb88b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442116989792588596, guid: 035ded028a77bb741be3df8f52beb88b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442116989792588596, guid: 035ded028a77bb741be3df8f52beb88b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442116989792588596, guid: 035ded028a77bb741be3df8f52beb88b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 035ded028a77bb741be3df8f52beb88b, type: 3}
 --- !u!4 &132549591 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4597802465695043021, guid: 0dc0935cd559bb44ea0dfe0a72e0c87c,
@@ -844,7 +912,7 @@ PrefabInstance:
         type: 3}
       propertyPath: reward
       value: 
-      objectReference: {fileID: 919132149155446097, guid: eee68206a7c2826498c68fa9d0a3b7d8,
+      objectReference: {fileID: 3805956652626688443, guid: 035ded028a77bb741be3df8f52beb88b,
         type: 3}
     - target: {fileID: 663452840672184395, guid: 0dc0935cd559bb44ea0dfe0a72e0c87c,
         type: 3}
@@ -1152,8 +1220,8 @@ Camera:
   m_GameObject: {fileID: 1621814775}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.062364746, g: 0.034709856, b: 0.11320752, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1850,3 +1918,4 @@ SceneRoots:
   - {fileID: 1218493771}
   - {fileID: 1362176274}
   - {fileID: 956510272}
+  - {fileID: 6463076}
