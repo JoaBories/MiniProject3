@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float accel;
     [SerializeField] private float maxSpeed;
 
+    [SerializeField] private GameObject explosionPrefab;
+
     private float lifetime;
 
     private Rigidbody rb;
@@ -44,6 +46,9 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            GameObject currentExplosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(currentExplosion, 1f);
+
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

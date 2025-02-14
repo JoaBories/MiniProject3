@@ -8,6 +8,7 @@ TagManager:
   - EnemyGroup
   - Enemy
   - GameCage
+  - PowerCapsule
   layers:
   - Default
   - TransparentFX

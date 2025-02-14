@@ -4,6 +4,8 @@ using UnityEngine.VFX;
 
 public class PlayerMovements : MonoBehaviour
 {
+    public static PlayerMovements instance;
+
     [SerializeField] private float movementSpeed;
     [SerializeField] private float accel;
     [SerializeField] private float deccel;
@@ -30,6 +32,7 @@ public class PlayerMovements : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
         _rb = GetComponent<Rigidbody>();
     }
 

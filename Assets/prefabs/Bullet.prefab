@@ -181,3 +181,5 @@ MonoBehaviour:
   lifeSpan: 2
   accel: 3
   maxSpeed: 12
+  explosionPrefab: {fileID: 7225718976508027857, guid: 49fd7b6d91ac00a4693b39aa9db96f9d,
+    type: 3}

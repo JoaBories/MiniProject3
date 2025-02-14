@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < number; i++)
         {
             GameObject currentEnemy = Instantiate(enemy, currentEnemyGroup.transform);
-            currentEnemy.GetComponent<AIPath>().Initialize(path, speed, currentEnemyGroup);
+            currentEnemy.GetComponent<EnemyBehaviour>().Initialize(path, speed, currentEnemyGroup);
             yield return new WaitForSeconds(interval);
         }
     }
