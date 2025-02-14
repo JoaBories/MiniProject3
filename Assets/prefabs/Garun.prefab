@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2105226240807083653}
   - component: {fileID: -8948871148445503560}
   - component: {fileID: 8947907902234071602}
+  - component: {fileID: 6223950172202895977}
   m_Layer: 0
   m_Name: Garun
   m_TagString: Enemy
@@ -93,6 +94,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58da79ac9f497cf4aa4e938da64fe81a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6223950172202895977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082551696278275450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 310856a7c81b97c4a9c36973130ce822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5900946718318018431

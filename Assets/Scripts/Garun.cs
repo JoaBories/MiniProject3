@@ -9,13 +9,14 @@ public class Garun : MonoBehaviour
     float goalZrotation;
     float zRotationSmoothness;
 
-    private void Awake()
+    private void Start()
     {
         player = PlayerMovements.instance.transform;
     }
 
     private void Update()
     {
-        
+        Vector2 difference = player.transform.position - transform.position;
+        goalZrotation = -90 - Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
     }
 }
