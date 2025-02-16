@@ -108,6 +108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 310856a7c81b97c4a9c36973130ce822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zRotationSmoothness: 4
+  bulletSpeed: 10
+  bulletPrefab: {fileID: 4466779628106158807, guid: 6df4e6fb2f7133144a5ac5a4b5d9bc00,
+    type: 3}
+  randomShootInterval: 2
+  shootProba: 4
 --- !u!1 &5900946718318018431
 GameObject:
   m_ObjectHideFlags: 0

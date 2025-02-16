@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - GameCage
   - PowerCapsule
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
