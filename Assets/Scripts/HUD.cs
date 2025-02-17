@@ -9,6 +9,7 @@ public class HUD : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI scoreDisplay;
     [SerializeField] List<Image> upgradesDisplay = new();
+    [SerializeField] List<Image> activesUpgradesDisplay = new();
 
     [ColorUsageAttribute(true, true)]
     [SerializeField] List<Color> upgradesColors = new();
@@ -45,4 +46,11 @@ public class HUD : MonoBehaviour
             upgradesDisplay[i].color = upgradesColors[(int)upgrades[i]];
         }
     }
+
+    public void UpdateActiveUpgrades(Vector3 UpgradesTimers, Vector3 UpgradesDurations)
+    {
+        activesUpgradesDisplay[0].fillAmount = Mathf.Max(UpgradesTimers.x / UpgradesDurations.x, 0);
+        activesUpgradesDisplay[1].fillAmount = Mathf.Max(UpgradesTimers.y / UpgradesDurations.y, 0);
+        activesUpgradesDisplay[2].fillAmount = Mathf.Max(UpgradesTimers.z / UpgradesDurations.z, 0);
+    } 
 }

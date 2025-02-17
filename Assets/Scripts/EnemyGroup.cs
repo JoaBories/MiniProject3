@@ -6,14 +6,31 @@ public class EnemyGroup : MonoBehaviour
 {
     public GameObject reward;
 
-    public void CheckForChildrens(Vector3 lastChildPos)
+    public int enemyNB;
+    public bool finishSpawn;
+
+    public void ChildShot(Vector3 childPos)
     {
-        if (transform.childCount == 1)
+        enemyNB--;
+
+        if (enemyNB == 0)
         {
             if (reward != null)
             {
-                Instantiate(reward, lastChildPos, Quaternion.identity);
+                Instantiate(reward, childPos, Quaternion.identity);
             }
+        }
+
+        if (transform.childCount == 0 && finishSpawn)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void ChildOut()
+    {
+        if (transform.childCount == 0 && finishSpawn)
+        {
             Destroy(gameObject);
         }
     }

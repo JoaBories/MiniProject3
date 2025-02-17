@@ -14,7 +14,7 @@ GameObject:
   m_Layer: 0
   m_Name: EnemyGroupToSpawn
   m_TagString: EnemyGroup
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -90,10 +90,11 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  number: 0
+  number: 5
   prefab: {fileID: 0}
-  interval: 0
-  speed: 0
+  interval: 0.5
+  speed: 0.2
+  reward: {fileID: 3805956652626688443, guid: 035ded028a77bb741be3df8f52beb88b, type: 3}
   gizmosPrecision: 10
   gizmosScale: {x: 75, y: 25}
   origin: {fileID: 4597802465695043021}

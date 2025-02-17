@@ -53,6 +53,8 @@ public class PlayerUpgrade : MonoBehaviour
         {
             activeUpgrades.Remove(RewardTypes.FireRate);
         }
+
+        HUD.instance.UpdateActiveUpgrades(new Vector3(shieldTimer, additionalGunTimer, fireRateTimer), new Vector3(shieldDuration, additionalGunDuration, fireRateDuration));
     }
 
     private void OnTriggerEnter(Collider other)

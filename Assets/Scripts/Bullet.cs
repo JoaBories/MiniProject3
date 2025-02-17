@@ -51,7 +51,8 @@ public class Bullet : MonoBehaviour
 
             GameManager.instance.AddScore(10);
 
-            Destroy(other.gameObject);
+            other.GetComponent<EnemyBehaviour>().Die();
+
             Destroy(gameObject);
         }
     }

@@ -21,6 +21,7 @@ public class EnemySpawner : MonoBehaviour
             currentEnemy.GetComponent<EnemyBehaviour>().Initialize(path, speed, currentEnemyGroup);
             yield return new WaitForSeconds(interval);
         }
+        currentEnemyGroup.finishSpawn = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,6 +37,7 @@ public class EnemySpawner : MonoBehaviour
 
             EnemyGroup gCurrentEnemyGroup = Instantiate(enemyGroupPrefab, transform).GetComponent<EnemyGroup>();
             gCurrentEnemyGroup.reward = enemyGroupToSpawn.reward;
+            gCurrentEnemyGroup.enemyNB = enemyGroupToSpawn.number;
             StartCoroutine(Spawn(gNumber, gInterval, gSpeed, gEnemy, gPath, gCurrentEnemyGroup));
         }
     }

@@ -25,15 +25,17 @@ public class EnemyBehaviour : MonoBehaviour
         enemyGroup = iEnemyGroup;
     }
 
-    private void OnDestroy()
+    public void Die()
     {
-        enemyGroup.CheckForChildrens(transform.position);
+        enemyGroup.ChildShot(transform.position);
+        Destroy(gameObject);
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("GameCage"))
         {
+            enemyGroup.ChildOut();
             Destroy(gameObject);
         }
     }
