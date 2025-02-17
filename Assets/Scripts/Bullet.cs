@@ -49,6 +49,8 @@ public class Bullet : MonoBehaviour
             GameObject currentExplosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(currentExplosion, 1f);
 
+            GameManager.instance.AddScore(10);
+
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

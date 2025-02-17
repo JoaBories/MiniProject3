@@ -13,6 +13,8 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] Transform bulletSpawn;
     [SerializeField] GameObject bulletPrefab;
 
+    [SerializeField] private float twoBulletDistance;
+
     private float lastShoot;
 
     private bool shooting;
@@ -24,6 +26,11 @@ public class PlayerShoot : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (PlayerUpgrade.Instance.activeUpgrades.Contains(RewardTypes.FireRate))
+        {
+            lastShoot -= Time.fixedDeltaTime;
+        }
+
         lastShoot -= Time.fixedDeltaTime;
 
         if (shooting && lastShoot < -shootCooldown)
@@ -50,8 +57,18 @@ public class PlayerShoot : MonoBehaviour
 
     public void Shoot(GameObject prefab, float bulletSpeed)
     {
-        GameObject currentbullet = Instantiate(prefab, bulletSpawn.position, Quaternion.identity);
-        currentbullet.GetComponent<Rigidbody>().AddForce(transform.right.normalized * bulletSpeed, ForceMode.Impulse);
+        if (PlayerUpgrade.Instance.activeUpgrades.Contains(RewardTypes.AdditionalGun))
+        {
+            GameObject currentbullet = Instantiate(prefab, bulletSpawn.position + new Vector3(0f, twoBulletDistance / 2, 0f), Quaternion.identity);
+            currentbullet.GetComponent<Rigidbody>().AddForce(transform.right.normalized * bulletSpeed, ForceMode.Impulse);
+            currentbullet = Instantiate(prefab, bulletSpawn.position - new Vector3(0f, twoBulletDistance / 2, 0f), Quaternion.identity);
+            currentbullet.GetComponent<Rigidbody>().AddForce(transform.right.normalized * bulletSpeed, ForceMode.Impulse);
+        }
+        else
+        {
+            GameObject currentbullet = Instantiate(prefab, bulletSpawn.position, Quaternion.identity);
+            currentbullet.GetComponent<Rigidbody>().AddForce(transform.right.normalized * bulletSpeed, ForceMode.Impulse);
+        }
         lastShoot = 0;
     }
 }

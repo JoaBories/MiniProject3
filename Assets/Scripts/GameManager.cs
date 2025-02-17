@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float playerGroupSpeed;
 
+    public int Score;
+
     private void Awake()
     {
         instance = this;
@@ -16,5 +18,11 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         transform.position += playerGroupSpeed * Time.deltaTime * Vector3.right;
+    }
+
+    public void AddScore(int score)
+    {
+        Score += score;
+        HUD.instance.UpdateScore(Score);
     }
 }
