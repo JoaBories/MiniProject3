@@ -10,6 +10,8 @@ TagManager:
   - GameCage
   - PowerCapsule
   - EnemyBullet
+  - Checkpoint
+  - EnemyGroupToSpawn
   layers:
   - Default
   - TransparentFX

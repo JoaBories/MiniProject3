@@ -26,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("EnemyGroup"))
+        if (other.CompareTag("EnemyGroupToSpawn"))
         {
             EnemyGroupToSpawn enemyGroupToSpawn = other.GetComponent<EnemyGroupToSpawn>();
             int gNumber = enemyGroupToSpawn.number;

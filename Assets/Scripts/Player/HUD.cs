@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    public static HUD instance; 
+    public static HUD instance;
 
     [SerializeField] TextMeshProUGUI scoreDisplay;
     [SerializeField] List<Image> upgradesDisplay = new();
@@ -15,6 +15,8 @@ public class HUD : MonoBehaviour
     [SerializeField] List<Color> upgradesColors = new();
 
     [SerializeField] private int scoreSize;
+
+    [SerializeField] private TextMeshProUGUI lifeDisplay;
 
     private void Awake()
     {
@@ -53,4 +55,9 @@ public class HUD : MonoBehaviour
         activesUpgradesDisplay[1].fillAmount = Mathf.Max(UpgradesTimers.y / UpgradesDurations.y, 0);
         activesUpgradesDisplay[2].fillAmount = Mathf.Max(UpgradesTimers.z / UpgradesDurations.z, 0);
     } 
+
+    public void UpdateLife(int life)
+    {
+        lifeDisplay.text = life.ToString();
+    }
 }

@@ -112,4 +112,19 @@ public class PlayerUpgrade : MonoBehaviour
             }
         }
     }
+
+    public void BreakShield()
+    {
+        shieldTimer = 0;
+    }
+
+    public void Restart()
+    {
+        activeUpgrades.Clear();
+        upgrades.Clear();
+
+        shieldTimer = 0;
+        additionalGunTimer = 0;
+        fireRateTimer = 0;
+    }
 }

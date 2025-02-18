@@ -16,7 +16,7 @@ public class EnemyGroupToSpawn : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.green;
 
         if (origin == null) origin = transform;
 
