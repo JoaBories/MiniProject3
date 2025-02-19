@@ -69,6 +69,7 @@ public class PlayerShoot : MonoBehaviour
             GameObject currentbullet = Instantiate(prefab, bulletSpawn.position, Quaternion.identity);
             currentbullet.GetComponent<Rigidbody>().AddForce(transform.right.normalized * bulletSpeed, ForceMode.Impulse);
         }
+        SoundManager.instance.PlaySound("shoot", transform.position);
         lastShoot = 0;
     }
 }

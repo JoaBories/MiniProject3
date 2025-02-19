@@ -69,6 +69,7 @@ public class PlayerLife : MonoBehaviour
                 playerCollider.enabled = false;
                 anotherBool = true;
                 Destroy(Instantiate(explosionForSpaceShip, transform.position, Quaternion.identity), 1f);
+                SoundManager.instance.PlaySound("hurt", transform.position);
             }
 
             Destroy(other.gameObject);

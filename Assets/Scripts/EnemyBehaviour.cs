@@ -27,6 +27,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void Die()
     {
+        SoundManager.instance.PlaySound("enemyDie", transform.position);
         enemyGroup.ChildShot(transform.position);
         Destroy(gameObject);
     }

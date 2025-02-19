@@ -66,6 +66,7 @@ public class PlayerUpgrade : MonoBehaviour
                 upgrades.Add(other.GetComponent<Reward>().rewardType);
                 HUD.instance.UpdateUpgrades(upgrades);
             }
+            SoundManager.instance.PlaySound("powerUp", Vector3.zero);
             GameManager.instance.AddScore(100);
             Destroy(other.gameObject);
         }
