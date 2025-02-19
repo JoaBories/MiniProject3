@@ -12,6 +12,7 @@ TagManager:
   - EnemyBullet
   - Checkpoint
   - EnemyGroupToSpawn
+  - End
   layers:
   - Default
   - TransparentFX

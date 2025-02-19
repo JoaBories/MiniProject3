@@ -39,6 +39,7 @@ public class PlayerLife : MonoBehaviour
             if (life <= 0)
             {
                 KeepInfo.sceneToRestartIndex = SceneManager.GetActiveScene().buildIndex;
+                KeepInfo.score = GameManager.instance.Score;
                 SceneManager.LoadScene("Restart");
             }
 

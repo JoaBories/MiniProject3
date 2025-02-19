@@ -123,6 +123,9 @@ public class PlayerUpgrade : MonoBehaviour
         activeUpgrades.Clear();
         upgrades.Clear();
 
+        HUD.instance.UpdateUpgrades(upgrades);
+        HUD.instance.UpdateActiveUpgrades(new Vector3(shieldTimer, additionalGunTimer, fireRateTimer), new Vector3(shieldDuration, additionalGunDuration, fireRateDuration));
+
         shieldTimer = 0;
         additionalGunTimer = 0;
         fireRateTimer = 0;
